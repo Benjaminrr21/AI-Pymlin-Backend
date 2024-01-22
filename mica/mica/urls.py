@@ -19,7 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     #ovo pokazuje sta koristimo nakon localhostt...../
-    path("game/", include("game.urls")),
-    #path("myjson/", include("game.urls")),
-    path('admin/', admin.site.urls),
+    path("gamee/", include("game.urls")),
+    
 ]
