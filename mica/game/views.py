@@ -14,10 +14,16 @@ DEPTH_HARD = 4
 
 @csrf_exempt
 def make_move(request):
-    state = json.loads(request.body)
-    difficulty = state['difficulty'] # DEPTH
-    player = state['player']
-    line_made = state['line_made']
+    try:
+        state = json.loads(request.body)
+        difficulty = state['difficulty'] # DEPTH
+        player = state['player']
+        line_made = state['line_made']    # existing code
+
+    except Exception as e:
+        print(f"Error in make_move: {str(e)}")
+        return JsonResponse({'error': 'Internal Server Error'}, status=500)
+    
 
 
        # return JsonResponse({ 'move': ['set', -1, x, y] })

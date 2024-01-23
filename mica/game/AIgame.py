@@ -1,4 +1,7 @@
 import math
+import sys
+
+sys.setrecursionlimit(10**6)  # Set a higher limit if needed
 
 SET_STONE = 'set'
 MOVE_STONE = 'move'
@@ -313,7 +316,7 @@ def alphabetaM(state, depth, a, b, player, line_made=False):
                 next_player *= -1
                 line_made = True
             current_value = alphabetaM(state, depth - 1, a, b, next_player, line_made)[0]
-            print(f'{depth}:{player}:{current_value=}')
+           # print(f'{depth}:{player}:{current_value=}')
             if current_value > value:
                 value = current_value
                 best_move = move
@@ -332,7 +335,7 @@ def alphabetaM(state, depth, a, b, player, line_made=False):
                 next_player *= -1
                 line_made = True
             current_value = alphabetaM(state, depth - 1, a, b, next_player, line_made)[0]
-            print(f'{depth}:{player}:{current_value=}')
+            #print(f'{depth}:{player}:{current_value=}')
             if current_value < value:
                 value = current_value
                 best_move = move
@@ -358,7 +361,7 @@ def alphabetaH(state, depth, a, b, player, line_made=False):
                 next_player *= -1
                 line_made = True
             current_value = alphabetaH(state, depth - 1, a, b, next_player, line_made)[0]
-            print(f'{depth}:{player}:{current_value=}')
+            #print(f'{depth}:{player}:{current_value=}')
             if current_value > value:
                 value = current_value
                 best_move = move
@@ -377,7 +380,7 @@ def alphabetaH(state, depth, a, b, player, line_made=False):
                 next_player *= -1
                 line_made = True
             current_value = alphabetaH(state, depth - 1, a, b, next_player, line_made)[0]
-            print(f'{depth}:{player}:{current_value=}')
+           # print(f'{depth}:{player}:{current_value=}')
             if current_value < value:
                 value = current_value
                 best_move = move
