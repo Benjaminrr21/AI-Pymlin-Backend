@@ -6,7 +6,7 @@ from random import random
 
 import json
 
-from .AI import minimax, alphabetaM,alphabetaH
+from .AIgame import minimax, alphabetaM,alphabetaH
 
 DEPTH_EASY = 3
 DEPTH_MEDIUM = 4
